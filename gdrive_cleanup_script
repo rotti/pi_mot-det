@@ -1,0 +1,11 @@
+// upload script to google drive 
+
+function listFilesInFolderandDelete(folderName) {  
+  var folder = DriveApp.getFoldersByName("mot-pics").next();  
+  var files = folder.getFiles();
+  while (files.hasNext()) {
+    var file = files.next();
+    Logger.log(file.getName());
+    file.setTrashed(true)
+  }
+};
